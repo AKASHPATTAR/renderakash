@@ -1,0 +1,56 @@
+<% layout("/layouts/bolierplate") %>
+
+
+    <div class="row">
+        <div class="col-8 offset-2">
+            <H3> EDIT THE THE LIST </H3>
+            <form method="POST" novalidate class="needs-validation" action="/listings/<%= listing._id %>?_method=PUT"
+                enctype="multipart/form-data">
+                <div class="mb-3">
+
+                    <label for="title" class="form-label">TITLE</label>
+                    <input type="text" name="listing[title]" value="<%= listing.title %>" class="form-label" required>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">DESCRIPTION</label>
+
+                    <textarea class="form-label" name="listing[description]"
+                        required><%= listing.description %></textarea>
+                </div>
+                <div class="mb-3">
+                    <h5> orignal listing image</h5>
+                    <img src="<%=originalImageUrl%>">
+                </div>
+                <div class="mb-3">
+                    <label for="title" class="form-label">upload new image</label>
+                    <input class="form-label" type="file" name="listing[image]">
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">PRICE</label>
+                    <input class="form-label" type="number" name="listing[price]" value="<%= listing.price %>" required>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">LOCATION</label>
+                    <input class="form-label" type="text" name="listing[loctaion]" value="<%= listing.loctaion %>"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">COUNTRY</label>
+                    <input class="form-label" type="text" name="listing[country]" value="<%= listing.country %>"
+                        required>
+                </div>
+
+
+
+
+                <button class="btn btn-dark btn-edit"> EDIT </button>
+            </form>
+        </div>
+    </div>
