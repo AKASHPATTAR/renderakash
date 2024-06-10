@@ -6,8 +6,8 @@ if (process.env.NODE_ENV != "production") {
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const Listing = require("../models/listing.js");
-//const Listing = require("../project/models/listing.js");
+const Listing = require("./models/listing.js");
+ 
 const path = require("path");
 const methodOverride = require("method-override");
 const wrapAysnc = require("./public/utils/wrapAsync.js");
@@ -16,8 +16,7 @@ const { listingSchema, reviewSchema } = require("./shemavalid.js");
 const session = require("express-session");
 const MongoStore = require('connect-mongo');
 
-//const { reviewSchema } = require("./shemavalid.js");
-//const ejsMate = require("ejs-mate");
+ 
 const engine = require('ejs-mate');
 const { send } = require("process");
 const listing = require("./routes/listing.js");
